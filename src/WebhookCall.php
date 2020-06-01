@@ -11,18 +11,39 @@ use Spatie\WebhookServer\Signer\Signer;
 
 class WebhookCall
 {
-    protected CallWebhookJob $callWebhookJob;
+    /**
+     * @var \Illuminate\Contracts\Foundation\Application|mixed|CallWebhookJob
+     */
+    protected $callWebhookJob;
 
-    protected string $uuid = '';
+    /**
+     * @var string
+     */
+    protected $uuid = '';
 
-    protected string $secret;
+    /**
+     * @var string
+     */
+    protected $secret;
 
-    protected Signer $signer;
+    /**
+     * @var Signer
+     */
+    protected $signer;
 
-    protected array $headers = [];
+    /**
+     * @var array
+     */
+    protected $headers = [];
 
-    private array $payload = [];
+    /**
+     * @var array
+     */
+    private $payload = [];
 
+    /**
+     * @var bool
+     */
     private $signWebhook = true;
 
     public static function create(): self

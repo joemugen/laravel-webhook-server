@@ -6,27 +6,60 @@ use GuzzleHttp\Psr7\Response;
 
 abstract class WebhookCallEvent
 {
-    public string $httpVerb;
+    /**
+     * @var string
+     */
+    public $httpVerb;
 
-    public string $webhookUrl;
+    /**
+     * @var string
+     */
+    public $webhookUrl;
 
-    public array $payload;
+    /**
+     * @var array
+     */
+    public $payload;
 
-    public array $headers;
+    /**
+     * @var array
+     */
+    public $headers;
 
-    public array $meta;
+    /**
+     * @var array
+     */
+    public $meta;
 
-    public array $tags;
+    /**
+     * @var array
+     */
+    public $tags;
 
-    public int $attempt;
+    /**
+     * @var int
+     */
+    public $attempt;
 
-    public ?Response $response;
+    /**
+     * @var Response|null
+     */
+    public $response;
 
-    public ?string $errorType;
+    /**
+     * @var string|null
+     */
+    public $errorType;
 
-    public ?string $errorMessage;
+    /**
+     * @var string|null
+     */
+    public $errorMessage;
 
-    public string $uuid;
+    /**
+     * @var string
+     */
+    public $uuid;
 
     public function __construct(
         string $httpVerb,
